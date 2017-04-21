@@ -129,7 +129,6 @@ class UpdateAgent implements ICheckAgent, IUpdateAgent, IDownloadAgent {
 
     @Override
     public void update() {
-        mApkFile = new File(mContext.getExternalCacheDir(), mInfo.md5 + ".apk");
         if (UpdateUtil.verify(mApkFile, mInfo.md5)) {
             doInstall();
         } else {
